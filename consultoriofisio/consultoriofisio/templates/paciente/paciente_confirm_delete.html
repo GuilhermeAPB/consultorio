@@ -1,0 +1,17 @@
+<!--
+    Este código define o template para a visualização paciente_delete, que exibe uma tela de confirmação antes de excluir um paciente. 
+    O título da página inclui o nome do paciente que será excluído. 
+    O botão "Sim" envia o formulário para o servidor para confirmar a exclusão, enquanto o link "Cancelar" retorna para a lista de pacientes.
+-->
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Tem certeza que deseja excluir {{ paciente.nome }}?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim</button>
+</form>
+<a href="{% url 'paciente_list' %}">Cancelar</a>
+{% endblock %}

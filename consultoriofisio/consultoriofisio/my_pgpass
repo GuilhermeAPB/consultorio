@@ -1,0 +1,6 @@
+# localhost:5432:NAME:USER:PASSWORD
+#localhost: 5432: postgres: postgres: SenhaConsultorio001
+
+
+localhost:5432:postgres:postgres:SenhaConsultorio001
+#localhost: 5432: postgres: postgres: SenhaConsultorio001

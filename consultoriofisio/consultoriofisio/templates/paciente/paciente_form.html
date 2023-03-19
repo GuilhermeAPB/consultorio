@@ -1,0 +1,20 @@
+<!--
+    Este código define o template para a visualização paciente_create e paciente_update, que exibe um formulário para 
+    adicionar ou atualizar um paciente. 
+    O formulário é baseado no formulário PacienteForm que definimos anteriormente. 
+    O botão "Salvar" envia o formulário para o servidor. 
+    No final da página, há um link para voltar para a lista de pacientes.
+-->
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% if form.instance.pk %}Editar{% else %}Adicionar{% endif %} paciente</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+</form>
+<a href="{% url 'paciente_list' %}">Voltar para a lista de pacientes</a>
+{% endblock %}
